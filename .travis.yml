@@ -9,3 +9,16 @@ before_install:
 script:
   - docker run -e CI=true goilby/docker-react npm run test
 
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "docker-react"
+  env: "Docker-react-env"
+  bucket_name: "elasticbeanstalk-us-east-2-785791989909"
+  bucket_path: "docker-react"
+  on: 
+    branch: master
+
+  access_key_id: "$access_key_id"
+  secret_access_key:
+    secure: "$secret_access_key"
