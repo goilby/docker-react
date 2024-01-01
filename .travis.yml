@@ -12,11 +12,12 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
-  app: "docker-react"
-  env: "Docker-react-env"
+  app: "docker-test1"
+  env: "Docker-test1-env"
   bucket_name: "elasticbeanstalk-us-east-2-785791989909"
   bucket_path: "docker-react"
   on: 
     branch: master
   access_key_id: "$access_key_id"
   secret_access_key: "$secret_access_key"
+  skip_cleanup: true
